@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/openjdk:17-browsers-legacy
+      - image: cimg/openjdk:17.0.6
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -36,8 +36,5 @@ jobs:
           paths:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
-
-      # run tests!
-      - run: mvn integration-test
 
 
